@@ -39,7 +39,7 @@ function move(cell) {
     
     checkForWinner() // runs function to match winner
     
-    if (movesCounter === 9) {
+    if (movesCounter === 10) {
         gameOver()
     }
     
@@ -72,6 +72,7 @@ function checkForWinner() {
             (moves[2] === moves[4] && moves[2] === moves[6] && moves[2] != null)
             ) {
                 gameOver(playerMove)
+                movesCounter++ //my hack to not double run the ending (winner and draw)
             }
         }
 }
